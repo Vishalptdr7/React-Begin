@@ -1,0 +1,23 @@
+{
+  "name": "react-begin",
+  "version": "1.0.0",
+  "description": "This is my first react project",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vishalptdr7/React-Begin.git"
+  },
+  "author": "Vishal Patidar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Vishalptdr7/React-Begin/issues"
+  },
+  "homepage": "https://github.com/Vishalptdr7/React-Begin#readme",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "parcel": "^2.13.3"
+  }
+}
