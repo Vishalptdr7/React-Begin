@@ -35,3 +35,7 @@ example
 
 # component composition
 - component inside a component is called component composition
+
+
+######     Day ->4
+ 
