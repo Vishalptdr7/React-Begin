@@ -297,15 +297,15 @@ const cardData = [
 const Body=()=>{
   return (
     <div className="body">
-      <div class="search-container">
-        <input type="text" placeholder="Search here..." class="search-input" />
-        <button class="search-button">Search</button>
+      <div className="search-container">
+        <input type="text" placeholder="Search here..." className="search-input" />
+        <button className="search-button">Search</button>
       </div>
 
       <div className="resto-container">
         {/* we create a map function to get all the data inside the carddata object */}
          
-        {cardData.map((data) => (                <RestoCard restData={data} />
+        {cardData.map((data) => (                <RestoCard key={data.id} restData={data} />
         ))}
         
 
