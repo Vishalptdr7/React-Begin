@@ -37,5 +37,9 @@ example
 - component inside a component is called component composition
 
 
-######     Day ->4
+######     Day ->5 
+ Make separate file for separate components
+ 
+# React Hooks
+-  
  

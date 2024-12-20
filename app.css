@@ -1,47 +1,4 @@
 
-/* 
-.header{
-    display: flex;
-    justify-content: space-between;
-    border: 1px solid black;
-    background-color: white;
-}
-
-
-
-.logo {
-  width: 100px;
-  height: auto;
-  display: flex; 
-  margin: 0 auto;
-  padding: 10px;
-}
-
-
-
-
-.nav-items > ul{
-    display: flex;
-    list-style-type: none;
-    padding: 0px 20px;
-    font-size: 20px;
-}
-.nav-items >ul >li{
-    padding: 20px;
-    margin-right: 20px;
-    text-decoration: none;
-    
-}
-.nav-items a {
-  text-decoration: none;
-  color: inherit; 
-}
-.nav-items a:hover {
-  text-decoration: none; 
-  color: #301ba6; 
-}
-*/
-
 
 
 
@@ -107,23 +64,7 @@
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
-  .header {
-    flex-direction: column; /* Stack header content on smaller screens */
-    align-items: center;
-  }
 
-  .nav-items > ul {
-    flex-direction: column; /* Stack navigation links */
-    align-items: center;
-    font-size: 16px; /* Adjust font size for smaller screens */
-  }
-
-  .nav-items > ul > li {
-    margin: 10px 0; /* Add spacing between stacked items */
-    padding: 10px;
-  }
-}
 
 
 
@@ -379,3 +320,69 @@
   color: #888;
 }
 
+
+
+
+
+body {
+  margin: 10;
+  padding: 10;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Responsive Media Queries */
+
+/* For smaller screens (phones) */
+@media (max-width: 600px) {
+  .header {
+    flex-wrap: wrap; /* Adjusts header layout */
+    padding: 10px; /* Reduces padding */
+  }
+
+  .logo {
+    margin: 0;
+    padding: 5px;
+    width: 100px; /* Adjust logo size */
+  }
+
+  .nav-items > ul {
+    flex-direction: column; /* Stacks navigation items */
+    font-size: 16px; /* Slightly smaller font */
+  }
+
+  .nav-items > ul > li {
+    margin-right: 0; /* Removes horizontal gap */
+    padding: 5px 10px; /* Adjusts padding for small screens */
+  }
+
+  .cards {
+    width: 100%; /* Cards span full width */
+    margin: 10px 0; /* Adjusts spacing */
+  }
+
+  .search-container {
+    flex-direction: column; /* Stacks input and button */
+    gap: 5px; /* Adjusts spacing */
+  }
+
+  .footer-container {
+    flex-direction: column; /* Stacks footer sections */
+    align-items: center; /* Centers content */
+  }
+
+  .newsletter-form {
+    flex-direction: column; /* Stacks input and button */
+    gap: 5px; /* Reduces gap */
+  }
+}
+
+
+
+/* For larger screens (desktops) */
+@media (min-width: 1025px) {
+  
+  .footer-container {
+    justify-content: space-between; /* Full-width alignment */
+  }
+}
