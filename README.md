@@ -39,7 +39,27 @@ example
 
 ######     Day ->5 
  Make separate file for separate components
- 
+
 # React Hooks
--  
- 
+  
+- Normal java script function given by react that    function give some superpower to us
+   this is utility function
+- useState()  -> Superpowerfull  state variables in react It maintains state variables
+- State variables are maintained the component of a system
+- useEffect() ->
+
+
+
+-Whenever a state variable changes react re-render the component
+
+
+######  react using reconciliation algorithms is also known as react fiber 
+On the UI res-container has 15 restocard now my UI changes when I am  filter card
+##### React Having Virtual DOM -> Virtual Dom is an representation of Actual DOM 
+
+
+## Diff Algorithm -> tries to find difference between old and new  
+
+
+
+ ### [LOADING-THE-PAGE]->[Rendering-the-page]->[API-calls]->[RE-Rendering]
