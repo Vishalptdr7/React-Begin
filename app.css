@@ -404,8 +404,9 @@ body {
 
 .shimmer-container {
   display: flex;
-  flex-direction: column;
-  gap: 1rem;
+  flex-wrap: wrap; /* Ensure items wrap if the container is smaller */
+  gap: 1rem;       /* Space between items */
+  justify-content: space-between; /* Distribute space evenly */
 }
 
 .shimmer-box {
