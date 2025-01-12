@@ -47,7 +47,9 @@ example
 - useState()  -> Superpowerfull  state variables in react It maintains state variables
 - State variables are maintained the component of a system
 - useEffect() ->
-
+if no dependencies array  then it will be called when our component renders.
+if we have depencies array is empty useEffect will be called on initial render and just once called.
+ if any element present in dependecies array then useEffect  will be called when the element present in the array is updated
 
 
 -Whenever a state variable changes react re-render the component

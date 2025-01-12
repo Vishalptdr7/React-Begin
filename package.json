@@ -1,34 +1,74 @@
 {
 
   "name": "react-begin",
+
   "version": "1.0.0",
+
   "description": "This is my first react project",
+
   "scripts": {
+
     "test": "jest",
+
     "start": "parcel index.html",
+
     "build": "parcel build index.html"
+
   },
+
   "repository": {
+
     "type": "git",
+
     "url": "git+https://github.com/Vishalptdr7/React-Begin.git"
+
   },
+
   "author": "Vishal Patidar",
+
   "license": "ISC",
+
   "bugs": {
+
     "url": "https://github.com/Vishalptdr7/React-Begin/issues"
+
   },
+
   "homepage": "https://github.com/Vishalptdr7/React-Begin#readme",
+
   "dependencies": {
+
     "browserlist": "^1.0.1",
+
     "dotenv": "^16.4.7",
+
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+
+    "react-dom": "^19.0.0",
+
+    "react-router-dom": "^7.1.1"
+
   },
+
   "devDependencies": {
+
     "parcel": "^2.13.3",
+
     "process": "^0.11.10"
+
   },
-  "browserlist":[
+
+  "browserlist": [
+
     "last 2 chrome version"
-  ]
+
+  ],
+
+  "main": "index.js",
+
+  "keywords": [],
+
+  "type": "commonjs"
+
 }
+
