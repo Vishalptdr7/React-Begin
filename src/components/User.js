@@ -5,7 +5,7 @@ const User=({name})=>{
     useEffect(()=>{
       console.log("kfdna");
         const timer=setInterval(()=>{
-          console.log(Date.now().toLocaleString().split())
+          
         },1000);
         // This return is neccessary because if we move on another component then it will stop the above function
     return ()=>{

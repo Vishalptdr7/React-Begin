@@ -3,12 +3,12 @@ import ReactDOM from "react-dom/client";
 import RestoCard from "../components/RestoCard.js";
 import cardDataMock from "../utils/Data.js"; // Renamed to avoid conflict
 import Shimmer from "./Shimmer.js";
-
+import useOnlineStatus from "../utils/useOnlineStatus.js";
 const Body = () => {
   const [cardData, setCardData] = useState([]); // State for fetched data
   const [filterData, setFilterData] = useState([]); // State for filtered data
   const [searchText, setSearchText] = useState(""); // State for search input
-
+  
   useEffect(() => {
     fetchData(); // Fetch data when component mounts
   }, []);
@@ -33,7 +33,11 @@ const Body = () => {
       console.error("Error fetching data:", error);
     }
   };
-
+  const onlineStatus = useOnlineStatus();
+  console.log("Online status", onlineStatus);
+  if (onlineStatus===false){
+    return <div>You are offline</div> // Show message when offline 
+  }
   return cardData.length === 0 ? (
     // Show shimmer during data fetching
     <Shimmer />
