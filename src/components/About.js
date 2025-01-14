@@ -91,7 +91,7 @@ export class About extends React.Component {
   render()
  { return (
     <div>
-      
+      <User/>
       <UserClass name={"Ankit Yadav"} location={"Biora"} email={"ankityadav@gmail.com" } title={"CEO & Founder"} />
      
     </div>

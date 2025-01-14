@@ -1,8 +1,18 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const User=({name})=>{
     const [count,setCount]=useState(0);
-    
+    useEffect(()=>{
+      console.log("kfdna");
+        const timer=setInterval(()=>{
+          console.log(Date.now().toLocaleString().split())
+        },1000);
+        // This return is neccessary because if we move on another component then it will stop the above function
+    return ()=>{
+      clearInterval(timer)
+      console.log("BY");
+    }
+    },[]);
     
 
     return (
