@@ -13,34 +13,65 @@ const Header=()=>{
     setBtnName("Login");
   }
   return (
-    <div className="header">
+    <div className="flex justify-between items-center p-2.5 border border-gray-300  bg-pink-100 shadow-md sticky top-0 z-50">
+      {" "}
       <div className="logo-container">
-        <img className="logo" src={logo}></img>
+        <img
+          className="w-30 h-36 flex mx-auto py-2.5 cursor-pointer "
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRDwnOKl41cCXsIRaX8_KTXTWjYXdC6dUmXQ&s"
+        ></img>
       </div>
       <div className="nav-items">
-        <ul>
-          <li>
-             Online Status: {onlineStatus?"✅":"🔴"}
+        <ul className="flex items-center list-none m-0 p-0 text-xs">
+          <li className="px-5 py-2 mr-4 relative transition-colors duration-300">
+            Online Status: {onlineStatus ? "✅" : "🔴"}
           </li>
-          <li>
-            <Link to="/grocery">Grocery</Link>
+          <li className="px-5 py-2 mr-4 relative transition-colors duration-300">
+            <Link
+              className="no-underline text-gray-800 font-medium hover:text-blue-500 hover:underline"
+              to="/grocery"
+            >
+              Grocery
+            </Link>
           </li>
-            <li>
-            <Link to="/">Home</Link>
+          <li className="px-5 py-2 mr-4 relative transition-colors duration-300">
+            <Link
+              className="no-underline text-gray-800 font-medium hover:text-blue-500 hover:underline"
+              to="/"
+            >
+              Home
+            </Link>
           </li>
-          <li>
-            <Link to="/about">About Us</Link>
+          <li className="px-5 py-2 mr-4 relative transition-colors duration-300">
+            <Link
+              className="no-underline text-gray-800 font-medium hover:text-blue-500 hover:underline"
+              to="/about"
+            >
+              About Us
+            </Link>
           </li>
-          <li>
-            <Link to="/contact">Contact Us</Link>
+          <li className="px-5 py-2 mr-4 relative transition-colors duration-300">
+            <Link
+              className="no-underline text-gray-800 font-medium hover:text-blue-500 hover:underline"
+              to="/contact"
+            >
+              Contact Us
+            </Link>
           </li>
-          <li>
-            <a href="#">Cart</a>
+          <li className="px-5 py-2 mr-4 relative transition-colors duration-300">
+            <a
+              className="no-underline text-gray-800 font-medium hover:text-blue-500 hover:underline"
+              href="#"
+            >
+              Cart
+            </a>
           </li>
-          <button className="login-but" onClick={()=>{
-          btnName==="Login"?handleClick():handlePress();
-          
-          }}>
+          <button
+            className="login-but py-2 cursor-pointer"
+            onClick={() => {
+              btnName === "Login" ? handleClick() : handlePress();
+            }}
+          >
             {btnName}
           </button>
         </ul>
