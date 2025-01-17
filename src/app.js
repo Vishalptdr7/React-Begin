@@ -90,7 +90,7 @@ import Contact from "./components/Contact";
 import RestaurantMenu from "./components/RestaurantMenu";
 import Payment from "./components/Payment";
 const Grocery = lazy(() => import("./components/Grocery"));
-
+import Login from "./components/Login.js";
 // 1. Create Cart Context
 export const CartContext = createContext();
 
@@ -155,6 +155,10 @@ const appRouter = createBrowserRouter([
       { path: "/cart", element: <Cart /> },
       
       { path: "/checkout", element: <Payment /> },
+      {
+        path:"/login",
+        element:<Login/>
+      }
     ],
   },
 ]);

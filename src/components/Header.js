@@ -16,10 +16,13 @@ const Header=()=>{
     <div className="flex justify-between items-center p-2.5 border border-gray-300  bg-pink-100 shadow-md sticky top-0 z-50">
       {" "}
       <div className="logo-container">
-        <img
-          className="w-30 h-36 flex mx-auto py-2.5 cursor-pointer "
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRDwnOKl41cCXsIRaX8_KTXTWjYXdC6dUmXQ&s"
-        ></img>
+        <Link to="/">
+        
+          <img
+            className="w-30 h-36 flex mx-auto py-2.5 cursor-pointer "
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRDwnOKl41cCXsIRaX8_KTXTWjYXdC6dUmXQ&s"
+          ></img>
+        </Link>
       </div>
       <div className="nav-items">
         <ul className="flex items-center list-none m-0 p-0 text-xs">
@@ -66,14 +69,16 @@ const Header=()=>{
               Cart
             </Link>
           </li>
-          <button
-            className="login-but py-2 cursor-pointer"
-            onClick={() => {
-              btnName === "Login" ? handleClick() : handlePress();
-            }}
-          >
-            {btnName}
-          </button>
+          <Link to="/login">
+            <button
+              className="login-but py-2 cursor-pointer"
+              onClick={() => {
+                btnName === "Login" ? handleClick() : handlePress();
+              }}
+            >
+              {btnName}
+            </button>
+          </Link>
         </ul>
       </div>
     </div>
