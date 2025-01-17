@@ -73,6 +73,7 @@ const Body = () => {
       {/* Render restaurant cards */}
       <div className="resto-container flex flex-wrap justify-around">
         {" "}
+        
         {filterData.map((data) => (
           <Link to={"/restaurants/" + data.info.id}>
             {data?.info.avgRating >= 4.3 ? (

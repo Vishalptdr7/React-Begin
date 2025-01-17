@@ -2,7 +2,8 @@
 import Shimmer from "./Shimmer.js";
 import { useParams } from "react-router-dom";
 import useRestaurantMenu from "../utils/useRestaurantMenu.js";
-import RestautantCategory from "./RestaurantCategory.js";
+import RestaurantCategory from "./RestaurantCategory.js";
+// import RestautantCategory from "./RestaurantCategory.js";
 
 const RestaurantMenu = () => {
   const { resId } = useParams();
@@ -24,9 +25,13 @@ const RestaurantMenu = () => {
       <h2 className="font-bold my-10 text-2xl">Restaurant Menu</h2>
       <h2>{data.name}</h2>
       <div>
-        {category.map((cat) => (
-          <RestautantCategory key={cat.id} data={cat.card.card}/>
-        ))}
+        {
+          category.map((cat)=>(
+             <RestaurantCategory  key ={cat.id} data={cat.card.card} />
+          )
+           
+          )
+        }
       </div>
     </div>
   );

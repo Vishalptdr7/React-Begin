@@ -59,12 +59,12 @@ const Header=()=>{
             </Link>
           </li>
           <li className="px-5 py-2 mr-4 relative transition-colors duration-300">
-            <a
+            <Link
               className="no-underline text-gray-800 font-medium hover:text-blue-500 hover:underline"
-              href="#"
+              to="/cart"
             >
               Cart
-            </a>
+            </Link>
           </li>
           <button
             className="login-but py-2 cursor-pointer"
