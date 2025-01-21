@@ -1,14 +1,18 @@
 import {logo} from "../../images/logo.png"
-import { useState } from "react";
+import { useState ,useContext} from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 const Header=()=>{
   const [btnName, setBtnName] = useState("Login");
   const onlineStatus=useOnlineStatus();
   const handleClick = () => {
     setBtnName("LogOut");
-
   }
+  const userName = localStorage.getItem("userName");
+  const {loggedInUser}=useContext(UserContext); 
+  console.log();
+
   const handlePress = () => {
     setBtnName("Login");
   }
@@ -69,7 +73,7 @@ const Header=()=>{
               Cart
             </Link>
           </li>
-          <Link to="/login">
+          <Link to="/signup">
             <button
               className="login-but py-2 cursor-pointer"
               onClick={() => {
@@ -78,7 +82,11 @@ const Header=()=>{
             >
               {btnName}
             </button>
+            
           </Link>
+          <li>
+            {loggedInUser}
+          </li>
         </ul>
       </div>
     </div>

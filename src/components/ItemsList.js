@@ -4,7 +4,7 @@ import React, { useContext } from "react";
 import { CDN_LINK } from "../utils/Data";
 import { CartContext } from "../app.js";
 
-const ItemsList = ({ data }) => {
+const ItemsList = ({ data,dummy }) => {
   const { addToCart } = useContext(CartContext);
 
   return (
@@ -29,6 +29,7 @@ const ItemsList = ({ data }) => {
             <span className="mt-4 text-green-600 font-bold text-lg">
               ₹{item.card.info.defaultPrice / 100 || item.card.info.price / 100}
             </span>
+            
             <button
               className="mt-4 w-full py-2 text-white bg-blue-500 rounded-md hover:bg-blue-600 transition-colors duration-200"
               onClick={() =>

@@ -1,12 +1,22 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { CDN_LINK } from "../utils/Data";
+import UserContext from "../utils/UserContext";
+import { useContext } from "react";
 const RestoCard = (data) => {
   const { restData } = data;
   
-  const { name, cloudinaryImageId, id, description, avgRating, time } =
-    restData?.info;
-    const image=''
+  const {
+    name,
+    cloudinaryImageId,
+    id,
+    description,
+    avgRating,
+    sla,
+    cuisines,
+    costForTwo,areaName
+  } = restData?.info;
+    const { loggedInUser } = useContext(UserContext);
   return (
     <div className="cards flex flex-col items-center justify-center p-4 border-none transition-shadow transition-border duration-300 w-64 m-5 bg-white rounded-lg shadow-sm hover:shadow-md cursor-pointer">
       {" "}
@@ -18,9 +28,10 @@ const RestoCard = (data) => {
         width="200"
       />
       <h3 className="text-lg my-2 font-semibold text-gray-800">{name}</h3>
-      <h4 className="text-sm my-1 text-gray-600">{description}</h4>
+      <h4 className="text-sm my-1 text-gray-600">{areaName}</h4>
       <h4 className="text-sm my-1 text-gray-600">Rating: {avgRating}</h4>
-      <h4 className="text-sm my-1 text-gray-600">{time}</h4>
+      <h4 className="text-sm my-1 text-gray-600">{sla.slaString} </h4>
+      <h4>User:{loggedInUser}</h4>
     </div>
   );
 };

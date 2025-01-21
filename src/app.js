@@ -91,11 +91,24 @@ import RestaurantMenu from "./components/RestaurantMenu";
 import Payment from "./components/Payment";
 const Grocery = lazy(() => import("./components/Grocery"));
 import Login from "./components/Login.js";
+import SignUp from "./components/SignUp.js";
 // 1. Create Cart Context
+import { useContext } from "react";
+import { useEffect } from "react";
 export const CartContext = createContext();
 
+import UserContext from "./utils/UserContext.js";
 const AppLayout = () => {
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState();
+ const  {loggedInUser}  = useContext(UserContext);
+  const [userName, setUserInfo] = useState();
+  useEffect(()=>{
+    const data={
+      name:"Vishal Patidar"
+    }
+    setUserInfo(data.name);
+
+  },[])
 
   // Add item to the cart
   const addToCart = (item) => {
@@ -129,10 +142,19 @@ const AppLayout = () => {
 
   return (
     <CartContext.Provider
-      value={{ cart, addToCart, updateCartItem, removeFromCart }}
+      value={{
+        cart,
+        addToCart,
+        updateCartItem,
+        removeFromCart,
+        loggedInUser: userName,
+      }}
     >
       <div className="app">
-        <Header />
+        <UserContext.Provider value={{ loggedInUser: userName }}>
+          {" "}
+          <Header />
+        </UserContext.Provider>
         <Suspense fallback={<h1>Loading .....</h1>}>
           <Outlet />
         </Suspense>
@@ -158,6 +180,9 @@ const appRouter = createBrowserRouter([
       {
         path:"/login",
         element:<Login/>
+      },{
+        path:"/signup",
+        element:<SignUp/>
       }
     ],
   },

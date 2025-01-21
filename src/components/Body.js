@@ -9,7 +9,7 @@ const Body = () => {
   const [cardData, setCardData] = useState([]); // State for fetched data
   const [filterData, setFilterData] = useState([]); // State for filtered data
   const [searchText, setSearchText] = useState(""); // State for search input
-  console.log(cardData);
+  
   useEffect(() => {
     fetchData(); // Fetch data when component mounts
   }, []);
@@ -37,7 +37,7 @@ const Body = () => {
     }
   };
   const onlineStatus = useOnlineStatus();
-  console.log("Online status", onlineStatus);
+  
   if (onlineStatus===false){
     return <div>You are offline</div> // Show message when offline 
   }
