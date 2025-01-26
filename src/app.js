@@ -1,84 +1,14 @@
-// import React ,{lazy,Suspense} from "react";
-// import ReactDOM from "react-dom/client";
-// import  Header from "./components/Header";
-// import Footer from "./components/Footer";
-// import Body from "./components/Body";
-// import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
-// const root=ReactDOM.createRoot(document.getElementById("js"));
-// import { About } from "./components/About";
-// import Contact from "./components/Contact";
-// import Cart from "./components/Cart";
-// import RestaurantMenu from "./components/RestaurantMenu";
-// // import Grocery from "./components/Grocery";
-// const Grocery=lazy(()=>import("./components/Grocery"))
-// const AppLayout=()=>{
-//   return (
-//     <div className="app">
-//      <Header />
-//      <Outlet/>
-//      <Footer />
-//     </div>
-//   )
-// }
-// const appRouter = createBrowserRouter([
-//   {
-//     path: "/",
-//     element: <AppLayout />,
-//     children: [
-//       {
-//         path: "/",
-//         element: (
-//           <Suspense fallback={<h1>Loading .....</h1>}>
-//             <Body />
-//           </Suspense>
-//         ),
-//       },
-//       {
-//         path: "/about",
-//         element: (
-//           <Suspense fallback={<h1>Loading .....</h1>}>
-//             <About />
-//           </Suspense>
-//         ),
-//       },
-//       {
-//         path: "/contact",
-//         element: (
-//           <Suspense fallback={<h1>Loading .....</h1>}>
-//             <Contact />
-//           </Suspense>
-//         ),
-//       },
-//       {
-//         path: "/grocery",
-//         element: (
-//           <Suspense fallback={<h1>Loading .....</h1>}>
-//             <Grocery />
-//           </Suspense>
-//         ),
-//       },
-//       {
-//         path: "/restaurants/:resId",
-//         element: (
-//           <Suspense fallback={<h1>Loading .....</h1>}>
-//             <RestaurantMenu />
-//           </Suspense>
-//         ),
-//       },
-//       {
-//         path:"/cart",
-//         element: (
-//           <Suspense fallback={<h1>Loading.....</h1>}>
-//             <Cart />
-//           </Suspense>
-//         ),
-//       }
-//     ],
-//   },
-// ]);
-// root.render(<RouterProvider router={appRouter}/>);
 
-import React, { lazy, Suspense, createContext, useState } from "react";
+
+
+import React, {
+  lazy,
+  Suspense,
+  createContext,
+  useState,
+  useEffect,
+  useContext,
+} from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import Header from "./components/Header";
@@ -92,23 +22,22 @@ import Payment from "./components/Payment";
 const Grocery = lazy(() => import("./components/Grocery"));
 import Login from "./components/Login.js";
 import SignUp from "./components/SignUp.js";
+
 // 1. Create Cart Context
-import { useContext } from "react";
-import { useEffect } from "react";
 export const CartContext = createContext();
-
 import UserContext from "./utils/UserContext.js";
-const AppLayout = () => {
-  const [cart, setCart] = useState();
- const  {loggedInUser}  = useContext(UserContext);
-  const [userName, setUserInfo] = useState();
-  useEffect(()=>{
-    const data={
-      name:"Vishal Patidar"
-    }
-    setUserInfo(data.name);
 
-  },[])
+const AppLayout = () => {
+  const [cart, setCart] = useState([]); // Fix: Initialize cart as an empty array
+  const { loggedInUser } = useContext(UserContext) || {}; // Ensure default context
+  const [userName, setUserInfo] = useState(""); // Fix: Initialize userName as an empty string
+
+  useEffect(() => {
+    const data = {
+      name: "Vishal Patidar",
+    };
+    setUserInfo(data.name);
+  }, []);
 
   // Add item to the cart
   const addToCart = (item) => {
@@ -147,12 +76,11 @@ const AppLayout = () => {
         addToCart,
         updateCartItem,
         removeFromCart,
-        loggedInUser: userName,
+        loggedInUser: userName, // Use userName from state
       }}
     >
       <div className="app">
         <UserContext.Provider value={{ loggedInUser: userName }}>
-          {" "}
           <Header />
         </UserContext.Provider>
         <Suspense fallback={<h1>Loading .....</h1>}>
@@ -175,15 +103,9 @@ const appRouter = createBrowserRouter([
       { path: "/grocery", element: <Grocery /> },
       { path: "/restaurants/:resId", element: <RestaurantMenu /> },
       { path: "/cart", element: <Cart /> },
-      
       { path: "/checkout", element: <Payment /> },
-      {
-        path:"/login",
-        element:<Login/>
-      },{
-        path:"/signup",
-        element:<SignUp/>
-      }
+      { path: "/login", element: <Login /> },
+      { path: "/signup", element: <SignUp /> },
     ],
   },
 ]);

@@ -65,3 +65,13 @@ On the UI res-container has 15 restocard now my UI changes when I am  filter car
 
 
  ### [LOADING-THE-PAGE]->[Rendering-the-page]->[API-calls]->[RE-Rendering]
+
+
+
+###### Redux toolkit
+- Install @reduxjs/toolkit and react-redux
+- Build our store
+- connect our store to our app
+- slice(cartSlice)
+- Dispatch(action)
+- Selector

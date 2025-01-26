@@ -3,7 +3,7 @@ import { useState ,useContext} from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "../utils/UserContext";
-const Header=()=>{
+const Header=(props)=>{
   const [btnName, setBtnName] = useState("Login");
   const onlineStatus=useOnlineStatus();
   const handleClick = () => {
@@ -70,7 +70,7 @@ const Header=()=>{
               className="no-underline text-gray-800 font-medium hover:text-blue-500 hover:underline"
               to="/cart"
             >
-              Cart
+           {}  Cart
             </Link>
           </li>
           <Link to="/signup">
